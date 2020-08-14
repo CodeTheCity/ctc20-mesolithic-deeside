@@ -32,7 +32,9 @@ var chunk_active = true;
 var natural_active = true;
 var other_active = true;
 
+var infoBoxes = [];
 
+var multi;
 
 var categories = [['core', core_markers, core_colour],
                   ['flake', flake_markers, flake_colour],
@@ -142,6 +144,14 @@ function addMarkers(points, markers, colour) {
          addInfo(marker, contentString);
          markers.push(marker);
      }
+    multi = document.getElementById("multi")
+}
+
+function closeInfoBoxes() {
+    for(i of infoBoxes) {
+        i.close();
+    }
+    infoBoxes = [];
 }
 
 
@@ -159,8 +169,13 @@ function initMap() {
 function addInfo(marker, contentString) {
     var infoWindow = new google.maps.InfoWindow({content: contentString});
     marker.addListener('click', function() {
+        if(!multi.checked) {
+            closeInfoBoxes();
+        }
         infoWindow.open(map, marker);
+        infoBoxes.push(infoWindow);
     });
+    
 }
 
 

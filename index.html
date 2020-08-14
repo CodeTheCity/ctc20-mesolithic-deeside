@@ -38,6 +38,17 @@
     <!-- <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX0sVHnM7dV8hm-KeGiutDbgFqwbRJauc&callback=initMap">
     </script> -->
+    <div class="controls">
+      <fieldset>
+        <legend>Info Boxes</legend>
+        <input type="radio" id="one" name="infoBoxes" value="one">
+        <label for="one">Only one open at a time</label>
+        <input type="radio" id="multi" name="infoBoxes" value="multi" checked>
+        <label for="multi">Can open multiple</label>
+      </fieldset>
+      <button class="category" id="close_info" onclick="closeInfoBoxes()">Close Info Boxes</button>
+    </div>
+        
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCX0sVHnM7dV8hm-KeGiutDbgFqwbRJauc&callback=initMap">
     </script>
     <div class="markerImage">
